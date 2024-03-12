@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -19,10 +20,26 @@ class AddBookTest {
 
     @BeforeAll
     static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver-win64\\chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", System.getenv("CHROME_DRIVER_PATH"));
+
+        ChromeOptions options = new ChromeOptions();
+        if (Boolean.parseBoolean(System.getenv("CHROME_HEADLESS"))) {
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+        }
+
+        driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+
+//    @BeforeAll
+//    static void setUp() {
+//        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver-win64\\chromedriver.exe");
+//        driver = new ChromeDriver();
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//    }
 
     @Test
     @Order(1)
