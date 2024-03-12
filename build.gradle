@@ -36,6 +36,10 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 // https://mvnrepository.com/artifact/org.mockito/mockito-core
 	testImplementation 'org.mockito:mockito-core:5.11.0'
+	// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+	testImplementation 'io.github.bonigarcia:webdrivermanager:5.0.3'
+
+
 
 
 }

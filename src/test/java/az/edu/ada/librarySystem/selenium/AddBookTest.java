@@ -11,35 +11,36 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.WebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class AddBookTest {
 
-    private static WebDriver driver;
+    @Autowired
+    private WebDriver driver;
     private static WebDriverWait wait;
-
-    @BeforeAll
-    static void setUp() {
-        System.setProperty("webdriver.chrome.driver", System.getenv("CHROME_DRIVER_PATH"));
-
-        ChromeOptions options = new ChromeOptions();
-        if (Boolean.parseBoolean(System.getenv("CHROME_HEADLESS"))) {
-            options.addArguments("--headless");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-        }
-
-        driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
 
 //    @BeforeAll
 //    static void setUp() {
-//        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver-win64\\chromedriver.exe");
-//        driver = new ChromeDriver();
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+//        options.addArguments("--disable-gpu");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--disable-dev-shm-usage");
+//
+//        driver = new ChromeDriver(options);
 //        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //    }
+
+
+    @BeforeAll
+    static void setUp() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver-win64\\chromedriver.exe");
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
     @Test
     @Order(1)

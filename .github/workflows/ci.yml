@@ -31,12 +31,6 @@ jobs:
           java-version: 21
           distribution: 'temurin'
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@latest
-
-      - name: Setup ChromeDriver
-        uses: browser-actions/setup-chromedriver@latest
-
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
@@ -47,5 +41,3 @@ jobs:
           SPRING_DATASOURCE_USERNAME: testuser
           SPRING_DATASOURCE_PASSWORD: testpass
           SPRING_JPA_HIBERNATE_DDL_AUTO: update
-          CHROME_DRIVER_PATH: ${{ steps.setup-chromedriver.outputs.chromedriver-path }}
-          CHROME_HEADLESS: true
