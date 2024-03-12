@@ -34,6 +34,8 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
 // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
 	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+	testImplementation 'org.mockito:mockito-core:5.11.0'
 
 
 }
