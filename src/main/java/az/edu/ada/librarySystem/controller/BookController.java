@@ -52,6 +52,7 @@ public class BookController {
         service.save(book);
         return "redirect:/books";
     }
+
     @RequestMapping("/mylist/{id}")
     public String getMyList(@PathVariable("id") int id){
         Book b = service.getBookById(id);

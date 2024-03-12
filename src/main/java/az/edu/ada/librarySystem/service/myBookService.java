@@ -25,11 +25,16 @@ public class myBookService {
     public List<myBook> listBooks(){
         return mybookrepo.findAll();
     }
-//
+    //
 //    public Book getBookById(int id){
 //        return mybookrepo.findById(id).get();
 //    }
     public void deleteBook(int id){
         mybookrepo.deleteById(id);
     }
+
+    public myBook getBookById(int id){
+        return mybookrepo.findById(id).get();
+    }
+
 }

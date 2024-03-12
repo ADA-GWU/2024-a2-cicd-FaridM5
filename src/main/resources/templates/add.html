@@ -13,17 +13,16 @@
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand text-white" aria-current="page" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" href="books">Books</a>
+                    <a class="nav-link active text-white" href="/books">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" href="add">Add</a>
+                    <a class="nav-link active text-white" href="/add">Add</a>
                 </li>
             </ul>
         </div>
@@ -36,6 +35,7 @@
 
 <!--Main content area-->
 <div class="container my-5 p-5" style="border:1px solid black;">
+    <h4 class="text-center">Add book</h4>
     <form th:action="@{/save}">
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label" style="font-weight: bold;">Name of the Book:</label>
@@ -68,7 +68,9 @@
                 </div>
             </div>
         </fieldset>
-        <center><button type="submit" class="btn btn-success" style="font-weight: bold;">Submit!</button></center>
+        <center><button type="submit" id="submit" class="btn btn-success" style="font-weight: bold;">Submit!</button>
+        </center>
+<!--        <center><button type="submit" class="btn btn-success" style="font-weight: bold;">Submit!</button></center>-->
     </form>
 </div>
 
