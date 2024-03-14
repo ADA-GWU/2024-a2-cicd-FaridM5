@@ -19,7 +19,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class AddBookTest {
 
     @Autowired
-    private WebDriver driver;
+//    private WebDriver driver;
+//    private static WebDriverWait wait;
+    private static WebDriver driver;
     private static WebDriverWait wait;
 
 //    @BeforeAll

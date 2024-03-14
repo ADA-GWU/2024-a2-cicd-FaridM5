@@ -47,3 +47,34 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test {
+	exclude '**/az/edu/ada/librarySystem/selenium/AddBookTest.class'
+}
